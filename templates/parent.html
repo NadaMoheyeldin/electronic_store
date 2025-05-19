@@ -1,0 +1,51 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {%block title%}
+        parent page
+        {%endblock%}
+    </title>
+    {%block css%}
+    <link href="{%static 'css/style.css'%} " rel="stylesheet">
+    {%endblock%}
+</head>
+<body>
+    <table border="1px solid" width="100%", hight="100%">
+        <tr>
+            <td>
+                <h1>Header</h1>
+                <img src="{%static 'imgs/Screenshot from 2025-05-13 02-24-05.png'%}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <a href="">Products</a>
+                <a href="">Categories</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                {%block content%}
+                content
+                {%endblock%}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <h1>Footer</h1>
+            </td>
+        </tr>
+
+    </table>
+
+    {%block javascript%}
+    <script src="{%static 'js/script.js'%}"></script>
+    {%endblock%}
+</body>
+</html>

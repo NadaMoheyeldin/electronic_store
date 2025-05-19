@@ -1,0 +1,21 @@
+{% extends 'parent.html' %}
+
+{% block title %}
+    Product - {{ product.name }}
+{% endblock %}
+
+{% block content %}
+<h1>Product Details</h1>
+<div class="product-detail">
+    <img src="/media/{{ product.image }}" width="200">
+    <h2>{{ product.name }}</h2>
+    <p><strong>Category:</strong> {{ product.category.name }}</p>
+    <p><strong>Added on:</strong> {{ product.insertdate }}</p>
+    
+    <div class="actions">
+        <a href="{% url 'product_update' product.id %}">Edit</a>
+        <a href="{% url 'product_delete' product.id %}">Delete</a>
+        <a href="{% url 'product_list' %}">Back to List</a>
+    </div>
+</div>
+{% endblock %}

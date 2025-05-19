@@ -1,0 +1,41 @@
+{%extends 'parent.html'%}
+
+{%block title%}
+    product - list
+{%endblock%}
+
+{%block content%}
+<h1>products</h1>
+<table width="100%" border="1px solid">
+    <tr>
+        <th>name</th>
+        <th>category</th>
+        <th>image</th>
+        <th>insert data</th>
+        <th>actions</th>
+    </tr>
+
+    {%for prod in products%}
+        <tr>
+            <td>{{prod.name}}</td>
+            <td>{{prod.category.name}}</td>
+            <td>
+                <img src="/media/{{prod.image}}">
+            </td>
+            <td>{{prod.image}}</td>
+            <td>{{prod.insertdate}}</td>
+            <td>
+                <a href="{%url 'product_update' prod.id%}">update</a>
+                <a href="{%url 'product_delete' prod.id%}">delete</a>
+
+                <a href="{%url 'product_show_details' prod.id%}">details</a>
+
+
+            </td>
+
+        </tr>
+
+
+    {%endfor%}
+</table>
+{%endblock%}

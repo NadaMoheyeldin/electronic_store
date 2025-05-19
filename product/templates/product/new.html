@@ -1,0 +1,24 @@
+{%extends 'parent.html'%}
+
+{%block title%}
+    product - new
+{%endblock%}
+
+{%block content%}
+
+    <form method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <input type="text"  name="pname"  placeholder="product name">
+        </br>
+        <input type="file" name="pimg">
+        </br>
+
+        <select name ='prodcat'>
+            {%for cat in cats%}
+                <option value="{{cat.id}}">{{cat.name}}</option>
+            {%endfor%}
+        </select>
+        <input type="submit" name="add" >
+    </form>
+<h1>{{msg}}</h1>
+{%endblock%}

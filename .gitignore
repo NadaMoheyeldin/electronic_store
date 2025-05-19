@@ -1,0 +1,35 @@
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+.DS_Store
+.Python
+env/
+venv/
+ENV/
+.pip-modules/
+
+# Django
+local_settings.py
+.env
+.env.save
+*.log
+media/
+staticfiles/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Git
+.git
+
+# OS
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
