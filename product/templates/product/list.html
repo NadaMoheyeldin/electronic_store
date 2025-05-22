@@ -15,21 +15,19 @@
         <th>actions</th>
     </tr>
 
-    {%for prod in products%}
+{{product}}
+    {%for prod in product%}
         <tr>
             <td>{{prod.name}}</td>
             <td>{{prod.category.name}}</td>
             <td>
-                <img src="/media/{{prod.image}}">
+                <img src="{{ prod.image.url }}" width="50">
             </td>
             <td>{{prod.image}}</td>
             <td>{{prod.insertdate}}</td>
             <td>
-                <a href="{%url 'product_update' prod.id%}">update</a>
-                <a href="{%url 'product_delete' prod.id%}">delete</a>
 
-                <a href="{%url 'product_show_details' prod.id%}">details</a>
-
+                
 
             </td>
 

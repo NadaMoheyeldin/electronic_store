@@ -10,6 +10,8 @@
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
+    <input type="text" name="pname" value="{{ oldobject.name }}">
+    <input type="file" name="image" />
     <input type="submit" value="Update Product">
 </form>
 {% endblock %}

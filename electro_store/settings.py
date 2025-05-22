@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 from django.conf.global_settings import STATICFILES_DIRS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -130,5 +130,5 @@ STATICFILES_DIRS=[BASE_DIR/'static/']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #upload image
-MEDIA_URL='media/'
-MEDIA_ROOT = BASE_DIR/'media/'
+MEDIA_URL='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

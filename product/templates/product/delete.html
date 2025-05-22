@@ -1,0 +1,15 @@
+<!-- product/delete_confirm.html -->
+{% extends "parent.html" %}
+
+{% block title %}
+    Confirm Delete
+{% endblock %}
+
+{% block content %}
+    <h3>Are you sure you want to delete "{{ product.name }}"?</h3>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+        <a href="{% url 'product_list' %}">Cancel</a>
+    </form>
+{% endblock %}
