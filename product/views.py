@@ -9,7 +9,8 @@ import os
 from django.views import View
 from django.conf import settings
 
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
+from django.urls import reverse_lazy
 
 
 class Product_list(ListView):
@@ -17,6 +18,13 @@ class Product_list(ListView):
     queryset = Product.getall()
     context_object_name = 'product'
     template_name = 'product/list.html'
+
+class Product_new(CreateView):
+    model = Product
+    fields = '__all__'
+    context_object_name = 'form'
+    template_name = 'product/newform.html'
+    success_url = reverse_lazy('product_list')
 
 ##class based
 '''class Products_list(View):
